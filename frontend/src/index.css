@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 20% 99%;
+    --foreground: 180 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 10% 10%;
+
+    --primary: 175 84% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 10% 95%;
+    --secondary-foreground: 180 10% 25%;
+
+    --muted: 180 10% 96%;
+    --muted-foreground: 180 5% 40%;
+
+    --accent: 190 95% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 10% 90%;
+    --input: 180 10% 90%;
+    --ring: 175 84% 32%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 180 15% 10%;
+    --foreground: 180 5% 95%;
+
+    --card: 180 15% 12%;
+    --card-foreground: 180 5% 95%;
+
+    --popover: 180 15% 12%;
+    --popover-foreground: 180 5% 95%;
+
+    --primary: 175 84% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 5% 20%;
+    --secondary-foreground: 180 5% 95%;
+
+    --muted: 180 5% 20%;
+    --muted-foreground: 180 5% 65%;
+
+    --accent: 190 95% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 180 5% 95%;
+
+    --border: 180 5% 25%;
+    --input: 180 5% 25%;
+    --ring: 175 84% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  .workout-card {
+    @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-myfit-600 to-accent bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-myfit-600 to-accent text-white rounded-full px-8 py-3 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-myfit-500/20 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary rounded-full px-8 py-3 font-medium transition-all duration-300 hover:bg-secondary/80 active:scale-95;
+  }
+}
